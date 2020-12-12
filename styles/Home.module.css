@@ -1,0 +1,124 @@
+/* header */
+
+header .row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+header .row:first-of-type {
+  padding-top: 12px;
+}
+
+header .logo {
+  width: 20%;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: lightgray;
+}
+
+header .header_nav {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase; /* Check later */
+}
+
+header .header_nav li:not(:last-of-type) {
+  margin-right: 18px;
+}
+
+header .title {
+  position: absolute;
+  top: 50%;
+}
+
+/* section works */
+
+.section_works .row:nth-child(1) {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section_works .row:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.section_works .column {
+  width: 300px;
+  margin: 18px 0;
+  border-radius: 18px;
+  background-color: rgb(54, 54, 54);
+  position: relative;
+}
+
+.section_works .column:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s;
+}
+
+.section_works .column::before {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 18px;
+  background-color: white;
+  z-index: -1;
+}
+
+.section_works .column::after {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 18px;
+  background-color: white;
+  z-index: -2;
+  filter: blur(10px);
+}
+
+.section_works .column::before,
+.section_works .column::after {
+  background: linear-gradient(
+    235deg,
+    /* rgba(61, 255, 54, 0.7), */ rgba(235, 62, 91, 0.7),
+    rgb(54, 54, 54),
+    rgba(235, 62, 91, 0.7)
+  );
+}
+
+.section_works .column .work_image {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.section_works .column .work_image .work_01 {
+  width: 100%;
+}
+
+.section_works .column .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section_works .column .content h3 {
+  margin: 18px 0;
+  align-self: center;
+}
+
+.section_works .column .content a.btn {
+  border: 1px solid white;
+  margin: 18px 0;
+  align-self: flex-end;
+  border-radius: 18px;
+  padding: 9px;
+}
