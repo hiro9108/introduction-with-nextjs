@@ -2,43 +2,32 @@ import React, {useEffect} from 'react';
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "../components/layout";
-
-
-// const changeColer = () => {
-//   const button = document.getElementById("button");
-//   button.onclick(() => alert("This is test."))
-// }
-
-
-
-// button.onclick(() => alert("This is test."));
-
 const works = () => {
 
-  useEffect(() => {
-    const button = document.getElementById("button");
-    
-    button.addEventListener("click", () => {
-      if (!button.style.color) {
-        return button.style.color = "blue";
-      }
-      button.style.color = button.style.color === "blue" ? "red" : "blue";
+  const localUrl = "http://localhost:9000/.netlify/functions/hello";
+  const devUrl = "https://hiro-portfolio.netlify.app/.netlify/functions/hello";
+
+  useEffect(async () => {
+    const resData = await fetch(devUrl)
+      .then(res => res.url);
+
+    const btn = document.getElementById("button");
+    btn.addEventListener("click", () => {
+      btn.innerText = resData;
     });
   },[]);
-  
   return (
-    <Layout>
+    <>
       <Head>
         <title>works page</title>
       </Head>
       <h2>works page with Next.js</h2>
       <Link href="/"><a>back</a></Link>
-      <button id="button">change color</button>
+      <button id="button">check api url</button>
       <style jsx>{`
-        color: red;
+        color: coral;
       `}</style>
-    </Layout>
+    </>
   );
 };
 
