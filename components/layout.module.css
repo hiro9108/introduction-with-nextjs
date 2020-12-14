@@ -1,0 +1,33 @@
+/* header layout test */
+
+header .row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+header .row:first-of-type {
+  padding-top: 12px;
+}
+
+header .logo {
+  width: 20%;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: lightgray;
+}
+
+header .header_nav {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase; /* Check later */
+}
+
+header .header_nav li:not(:last-of-type) {
+  margin-right: 18px;
+}
+
+header .title {
+  position: absolute;
+  top: 50%;
+}
